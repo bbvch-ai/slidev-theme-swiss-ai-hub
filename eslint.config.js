@@ -1,5 +1,6 @@
 import eslint from '@eslint/js'
 import unocssPlugin from '@unocss/eslint-plugin'
+import gitignore from 'eslint-config-flat-gitignore'
 import importPlugin from 'eslint-plugin-import'
 import sonarPlugin from 'eslint-plugin-sonarjs'
 import vuePlugin from 'eslint-plugin-vue'
@@ -7,6 +8,7 @@ import tseslint from 'typescript-eslint'
 import vueParser from 'vue-eslint-parser'
 
 export default [
+  gitignore(),
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   ...vuePlugin.configs['flat/recommended'],

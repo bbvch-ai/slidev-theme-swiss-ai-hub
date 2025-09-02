@@ -56,6 +56,7 @@
     "@unocss/eslint-plugin": "^66.5.0",
     "@unocss/preset-wind3": "^66.5.0",
     "@vue/tsconfig": "^0.8.1",
+    "eslint-config-flat-gitignore": "^2.1.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-sonarjs": "^3.0.5",
     "eslint-plugin-vue": "^10.4.0",
