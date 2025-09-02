@@ -1,0 +1,84 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish (e.g., 1.0.0)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run linter
+        run: pnpm run lint
+
+      - name: Check if version changed
+        id: version
+        run: |
+          PUBLISHED_VERSION=$(npm view slidev-theme-swiss-ai-hub version 2>/dev/null || echo "0.0.0")
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "published=$PUBLISHED_VERSION" >> $GITHUB_OUTPUT
+          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          if [ "$PUBLISHED_VERSION" != "$CURRENT_VERSION" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set version (manual trigger with version input)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.version != ''
+        run: npm version ${{ github.event.inputs.version }} --no-git-tag-version
+
+      - name: Publish to NPM
+        if: steps.version.outputs.changed == 'true' || (github.event_name == 'workflow_dispatch' && github.event.inputs.version != '')
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        if: steps.version.outputs.changed == 'true' || (github.event_name == 'workflow_dispatch' && github.event.inputs.version != '')
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.version.outputs.current }}
+          release_name: Release v${{ steps.version.outputs.current }}
+          body: |
+            ## What's Changed
+            
+            See [example demo](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+            
+            ### Installation
+            ```bash
+            pnpm add slidev-theme-swiss-ai-hub@${{ steps.version.outputs.current }}
+            ```
+          draft: false
+          prerelease: false

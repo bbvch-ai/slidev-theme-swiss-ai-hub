@@ -1,0 +1,77 @@
+{
+  "name": "slidev-theme-swiss-ai-hub",
+  "version": "0.0.1",
+  "description": "A professional Slidev theme with Swiss AI-Hub branding, featuring gradient backgrounds and flexible layouts",
+  "type": "module",
+  "author": "bbv Software Services AG",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/bbvch-ai/slidev-theme-swiss-ai-hub#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bbvch-ai/slidev-theme-swiss-ai-hub.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bbvch-ai/slidev-theme-swiss-ai-hub/issues"
+  },
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "swiss-ai-hub",
+    "presentation",
+    "slides",
+    "dark-theme"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "layouts",
+    "components",
+    "setup",
+    "uno.config.ts",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "packageManager": "pnpm@10.13.1",
+  "scripts": {
+    "build": "slidev build example.md",
+    "dev": "slidev example.md --open",
+    "preview": "vite preview",
+    "export": "slidev export example.md",
+    "screenshot": "slidev export example.md --format png",
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "@iconify-json/uil": "^1.2.3",
+    "@iconify-json/vscode-icons": "^1.2.30",
+    "@vueuse/core": "^13.8.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@slidev/cli": "^52.1.0",
+    "@slidev/types": "^52.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "@unocss/eslint-plugin": "^66.5.0",
+    "@unocss/preset-wind3": "^66.5.0",
+    "@vue/tsconfig": "^0.8.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-sonarjs": "^3.0.5",
+    "eslint-plugin-vue": "^10.4.0",
+    "playwright-chromium": "^1.55.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.41.0",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^3.0.6"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "defaults": {
+      "fonts": {
+        "sans": "Outfit, sans-serif",
+        "mono": "JetBrains Mono"
+      }
+    }
+  }
+}

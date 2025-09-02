@@ -1,0 +1,41 @@
+# Development files
+example.md
+.gitignore
+.git
+*.log
+.DS_Store
+
+# Build artifacts
+dist/
+node_modules/
+.pnpm-debug.log
+
+# Screenshots and media (optional - keep if you want them in npm package)
+# media/
+
+# Development configs
+.eslintrc
+.prettierrc
+tsconfig.json
+vite.config.ts
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+test/
+tests/
+__tests__/
+*.test.ts
+*.spec.ts
+
+# Documentation source files (optional)
+docs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

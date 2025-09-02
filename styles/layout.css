@@ -1,0 +1,46 @@
+.slidev-layout {
+    font-size: 1.2rem;
+}
+
+.slidev-layout.cover {
+  h1 {
+    @apply text-6xl font-200;
+  }
+
+  h2 {
+    @apply text-4xl text-gray font-300;
+  }
+
+  h1 + p {
+    @apply -mt-2 opacity-50 mb-4;
+  }
+}
+
+.slidev-layout.section {
+  h1 {
+    @apply mb-8;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    column-span: all;
+  }
+
+  ul, ol {
+    @apply break-inside-avoid
+  }
+
+  ul {
+    @apply list-disc list-inside space-y-2;
+  }
+}
+
+.slidev-toc {
+    .slidev-toc-item {
+        a {
+            @apply text-white hover:text-gray-400;
+        }
+    }
+}
+
+.slidev-code-tab {
+    font-size: 0.8rem;
+}
