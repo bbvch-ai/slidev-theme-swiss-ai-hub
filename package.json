@@ -1,6 +1,6 @@
 {
   "name": "slidev-theme-swiss-ai-hub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A professional Slidev theme with Swiss AI-Hub branding, featuring gradient backgrounds and flexible layouts",
   "type": "module",
   "author": "bbv Software Services AG",
@@ -35,7 +35,7 @@
   ],
   "packageManager": "pnpm@10.13.1",
   "scripts": {
-    "build": "slidev build example.md",
+    "build": "slidev build example.md --base /slidev-theme-swiss-ai-hub/",
     "dev": "slidev example.md --open",
     "preview": "vite preview",
     "export": "slidev export example.md",
