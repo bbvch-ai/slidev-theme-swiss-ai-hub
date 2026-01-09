@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex items-center justify-between px-12 text-xs text-gray">
+  <div class="text-xmd w-full flex items-center justify-between px-12 text-gray">
     <img
       src="/logo-white.png"
       class="h-6 opacity-60"

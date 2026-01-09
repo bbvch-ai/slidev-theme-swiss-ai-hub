@@ -11,13 +11,13 @@
           <GradientBackground>
             <div class="h-full w-full flex flex-col items-center justify-between px-12 pb-8 pt-24">
               <div class="flex flex-col items-center gap-6">
-                <h3 class="text-center text-sm text-gray">
+                <h3 class="text-center text-xl text-gray">
                   {{ prefix }}
                 </h3>
-                <h1 class="pb-4 text-center text-5xl font-light">
+                <h1 class="pb-2 text-center text-6xl font-light">
                   {{ sectionTitle }}
                 </h1>
-                <h2 class="text-center text-xl text-gray">
+                <h2 class="text-center text-2xl text-gray">
                   {{ postfix }}
                 </h2>
               </div>

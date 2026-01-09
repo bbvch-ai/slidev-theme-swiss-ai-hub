@@ -7,7 +7,7 @@
         <div class="h-full w-full flex flex-col items-center justify-between px-12 pb-8 pt-24">
           <div class="slidev-layout cover flex flex-col items-center justify-center text-center">
             <slot />
-            <p class="pt-12 text-xs text-gray">
+            <p class="text-md pt-12 text-gray">
               bbv Software Services AG | {{ useDateFormat(new Date(), 'YYYY.MM.DD') }}
             </p>
           </div>

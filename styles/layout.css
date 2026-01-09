@@ -1,14 +1,14 @@
 .slidev-layout {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .slidev-layout.cover {
   h1 {
-    @apply text-6xl font-200;
+    @apply text-8xl font-200;
   }
 
   h2 {
-    @apply text-4xl text-gray font-300;
+    @apply text-5xl text-gray font-300;
   }
 
   h1 + p {
