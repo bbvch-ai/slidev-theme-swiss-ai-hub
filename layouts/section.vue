@@ -83,7 +83,7 @@ const columnStyles = computed(() => {
 
 const columnClass = computed(() => {
   return {
-    'px-36': props.columnCount === 1,
+    'px-24': props.columnCount === 1,
     'px-12': props.columnCount === 2,
     'px-0': props.columnCount > 2,
   }
