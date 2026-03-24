@@ -22,7 +22,7 @@
                 </h2>
               </div>
               <img
-                src="/logo-white.png"
+                :src="logoWhite"
                 class="h-12"
                 alt="bbv logo"
               >
@@ -58,6 +58,7 @@
 import { computed } from "vue"
 
 import GradientBackground from "../components/gradient-background.vue"
+import logoWhite from "../assets/logo-white.png"
 
 const props = withDefaults(defineProps<{
   prefix: string

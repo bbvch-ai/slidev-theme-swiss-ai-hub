@@ -12,7 +12,7 @@
             </p>
           </div>
           <img
-            src="/logo-white.png"
+            :src="logoWhite"
             class="h-12"
             alt="bbv logo"
           >
@@ -25,5 +25,5 @@
 import { useDateFormat } from "@vueuse/core";
 
 import GradientBackground from "../components/gradient-background.vue";
-
+import logoWhite from "../assets/logo-white.png";
 </script>
